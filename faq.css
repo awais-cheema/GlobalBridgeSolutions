@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+
+/* latin-ext */
+@font-face {
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/inder/v14/w8gUH2YoQe8_4sqzrQ6_3Q.woff2) format('woff2');
+    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Inder';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/inder/v14/w8gUH2YoQe8_4sq9rQ4.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  
+*{
+  margin: 0;
+  padding: 0;
+}
+:root{
+  /* fonts */
+  --PrimaryFont: 'Inder', "Poppins" , sans-serif; 
+
+  /* colors */
+  --PrimaryColor: #70b4d1; 
+}
+
+
+body{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #121315;
+  scroll-behavior: smooth; 
+}
+
+::selection { 
+  color: #70b4d1;
+  background: transparent;
+} 
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+  display: none;
+
+}
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+  display: none;
+}
+@media (max-width: 500px) {
+  body{
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background-color: #121315;
+  }
+  
+  ::-webkit-scrollbar {
+      width: 0;
+      background: transparent;
+      display: none;
+  
+  }
+  ::-webkit-scrollbar-thumb {
+      background: #FF0000;
+      display: none;
+  }
+}
+
+
+
+/*     CURSER     */
+.cursor-ball {
+  position: fixed;
+  width: 20px; /* Size of the small ball */
+  height: 20px;
+  border-radius: 50%;
+  background-color: #c3e2ef; /* Color of the small ball */
+  pointer-events: none; /* Ensure the ball doesn't interfere with clicking */
+  transition: transform 0.1s ease-out, width 0.5s ease, height 0.5s ease; /* Smooth movement */
+  z-index: 9999; /* Ensure it's above other elements */
+  transform: translate(-50%, -50%); /* Center the ball on the cursor */
+  mix-blend-mode: difference;
+  
+}
+@media (max-width:500px) {
+  .cursor-ball{
+      display: none;
+  }
+}
+
+
+/* General styles */
+
+.sideCall{
+    background: url('./Picture/Contact/ us.webp');
+    width: 10vw;
+    height: 5vw;
+    position: absolute;
+    z-index: 99999;
+}
+
+
+#FAQ {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    transform: translateY(25vh);
+  }
+  .title{
+    font-size: 3vw;
+    font-weight: bold;
+    color: #e0eeee;
+    font-family: var(--PrimaryFont);
+    margin-bottom: 2vw;
+  }
+  .accordian {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    background-color: #1a1d1f;
+  }
+  
+  .item {
+    background-color: #e1e1e1;
+    margin-bottom: 10px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    position: relative;
+    transition: background-color 0.3s ease;
+  }
+  
+  .item.selected {
+    background-color: #ffffff;
+  }
+  
+  .item::after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #06965c;
+  }
+  
+  .FAQ-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
+    color: #131414;
+  }
+  
+  .faqQuestion {
+    font-size: 15px;
+    color: #131414;
+    text-align: start;
+    font-family: var(--PrimaryFont);
+  }
+  
+  .FAQ-content {
+    font-family: var(--PrimaryFont);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.8s cubic-bezier(0, 1, 0, 1);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #131414;
+  }
+  
+  .FAQ-content.show {
+    max-height: 9999px;
+    transition: max-height 0.8s cubic-bezier(1, 0, 1, 0);
+  }
+  
+  .expandToggle {
+    background: #ffffff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .FAQ-ShowMore {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .FAQ-ShowMore button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #06965c;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .FAQ-ShowMore button:hover {
+    background-color: #8ee0c4;
+    color: black;
+    font-weight: 700;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 1024px) {
+    .accordian {
+      max-width: 90%;
+    }
+  
+    .item {
+      padding: 12px 16px;
+    }
+  
+    .FAQ-title {
+      font-size: 16px;
+    }
+  
+    .expandToggle {
+      width: 28px;
+      height: 28px;
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .accordian {
+      padding: 10px;
+    }
+  
+    .item {
+      padding: 10px 14px;
+    }
+  
+    .FAQ-title {
+      font-size: 14px;
+    }
+  
+    .expandToggle {
+      width: 24px;
+      height: 24px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .accordian {
+      padding: 5px;
+    }
+  
+    .item {
+      padding: 8px 12px;
+    }
+  
+    .FAQ-title {
+      font-size: 12px;
+    }
+  
+    .expandToggle {
+      width: 20px;
+      height: 20px;
+      font-size: 12px;
+    }
+  }
+  
+  .extra{
+    height: 40vh;
+  }
