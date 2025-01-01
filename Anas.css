@@ -105,32 +105,46 @@ body{
     font-family: var(--PrimaryFont) !important;
 }
 .main-para{
-    font-size: 1.4vw;
+    font-size: 1.25vw;
     /* font-family: var(--PrimaryFont) !important; */
-    line-height: 1.8vw;
+    line-height: 1.6vw;
     text-transform: none;
     font-weight: 300;
-    width: 50vw;
+    width: fit-content;
 }
 .arrow-down{
-    width: 1.5vw;
-    height: 1.5vw;
+    width: 1.75vw;
+    height: 1.75vw;
     border-radius: 50%;
     border: 0.13vw solid var(--PrimaryColor);
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 1vw;
+    cursor: none;
+    transition: transform 0.4s linear;
+}
+.arrow-down:hover{
+    transform: scale(1.3);
 }
 .arrow-down-01{
-    width: 1vw;
+    width: 80%;
     height: auto;
+}
+.brP{
+    display: none;
 }
 @media (max-width: 500px) {
     .main-heading{
         font-size: 12vw;
         width: 90vw;
         line-height: 8vw;
+    }
+    .brTag{
+        display: none;
+    }
+    .brP{
+        display: flex;
     }
     .main{
         height: 85vh;
@@ -144,6 +158,7 @@ body{
         margin-top: 3vw;
         line-height: 4vw;
         width: 79vw;
+        text-align: center;
     }
     .arrow-down{
         height: 5vw;
@@ -172,7 +187,7 @@ body{
     font-size: 1vw;
     font-family: Arial, sans-serif;
     font-weight: 600;
-    cursor: pointer;
+    cursor: none;
     display: flex;
     justify-content: center;
     align-items: center;

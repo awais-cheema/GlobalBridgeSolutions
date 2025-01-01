@@ -297,3 +297,7 @@
         transform: translateY(130vh);
     }
 }
+
+html{
+    cursor: none;
+}

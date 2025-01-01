@@ -305,7 +305,7 @@ body{
     font-family: "Poppins" , sans-serif;
     color: #70b4d1;
     font-size: 1.2vw;
-    cursor: pointer;
+    cursor: none;
     text-decoration: none;
     transition: all 0.4s ease;
 }
@@ -694,21 +694,15 @@ body{
 
 .container-s6{
     display: flex;
-    white-space: nowrap;
-    overflow-x: auto;
-}
-.container-s6::-webkit-scrollbar{
-    display: none;
 }
 .s6{
     gap: 1vw;
     margin-right: 1vw;
     margin-left: 1vw;
-    width: calc(32vw * 5);
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: scrollInfinite 12s linear infinite alternate;
+    animation: scrollInfinite 10s linear infinite alternate;
     animation-play-state: running;
 }
 .cards-s6{
@@ -731,10 +725,19 @@ body{
 
 @keyframes scrollInfinite {
     0% {
-        transform: translateX(0%);
+        transform: translateX(21%);
     }
     100% {
-        transform: translateX(-39%);
+        transform: translateX(-21%);
+    }
+}
+
+@keyframes scrollInfinite2 {
+    0% {
+        transform: translateX(37.5%);
+    }
+    100% {
+        transform: translateX(-37.5%);
     }
 }
 
@@ -811,10 +814,10 @@ body{
         height: 60vh;
     }
     .s6{
-        width: calc(69vw * 5);
         gap: 3vw;
         margin-left: 1.5vw;
         margin-right: 2vw;
+        animation: scrollInfinite2 20s linear infinite alternate;
     }
     .container-s6{
         gap: 3vw;

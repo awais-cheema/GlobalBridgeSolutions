@@ -200,7 +200,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  cursor: pointer;
+  cursor: none;
 }
 
 .socail_item img {
